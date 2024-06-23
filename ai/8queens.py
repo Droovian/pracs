@@ -23,8 +23,8 @@ def solve_queens(board):
 
     while current_heuristic > 0 :
         # randomly select 2 rows to swap positions
-        row1, row2 = random.sample(range(8), 2)
-        current_board[row1], current_board[row2] = current_board[row2], current_board[row1]
+        row1, row2 = random.sample(range(1, 9), 2)
+        current_board[row1 - 1], current_board[row2 - 1] = current_board[row2 - 1], current_board[row1 - 1]
 
         new_board_heuristic = heuristic(current_board)
 
@@ -35,12 +35,12 @@ def solve_queens(board):
             print("Current heuristic: ", current_heuristic)
 
         else:
-            current_board[row1], current_board[row2] = current_board[row2], current_board[row1]
+            current_board[row1 - 1], current_board[row2 - 1] = current_board[row2 - 1], current_board[row1 - 1]
             same_state_count +=1
 
         if same_state_count >= max_same_state_count:
-            row1, row2 = random.sample(range(8), 2)
-            current_board[row1], current_board[row2] = current_board[row2], current_board[row1]
+            row1, row2 = random.sample(range(1, 9), 2)
+            current_board[row1 - 1], current_board[row2 - 1] = current_board[row2 - 1], current_board[row1 - 1]
             same_state_count = 0
 
     print("Solution found!")

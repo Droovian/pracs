@@ -10,7 +10,7 @@ def heuristic(ini, goa): # add sum as values in ini not matching with goal as he
     return sum
 
 def move(state, direction):
-    blank_index = state.index(0)
+    blank_index = state.index(0) # 0  indicates empty position to shift
     copy_state = list(state)
 
     if direction == 'up' and blank_index > 2:
@@ -62,6 +62,6 @@ def solve_puzzle(initial_state, goal_state, max_count=1000):
         counter+=1
 
 initial_state = tuple(map(int, input("Enter initial state : ").split()))
-goal_state=(1,2,3,4,5,6,7,0)
+goal_state=(1,2,3,4,5,6,7,8,0)
 
 solve_puzzle(initial_state, goal_state)

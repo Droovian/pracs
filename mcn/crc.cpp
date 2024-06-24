@@ -29,7 +29,7 @@ string mod2division(string& dividend, string& divisor){
             temp = do_xor(divisor, temp) + dividend[pick];
         }
         else {
-            temp = do_xor(std::string(pick, '0'), temp) + dividend[pick];
+            temp = do_xor(string(pick, '0'), temp) + dividend[pick];
         }
         pick += 1;
     }
@@ -38,10 +38,9 @@ string mod2division(string& dividend, string& divisor){
         temp = do_xor(divisor, temp);
     }
     else{
-        temp = do_xor(std::string(pick, '0'), temp);
+        temp = do_xor(string(pick, '0'), temp);
         return temp;
     }
-
 }
 
 void encode_data(string& data, string& key){

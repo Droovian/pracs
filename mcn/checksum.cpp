@@ -34,7 +34,7 @@ char add(char a, char b){
 }
 
 void complement(int& b_size){
-    for(int k=3; k>=0; k--){
+    for(int k=b_size-1; k>=0; k--){
         if(output[k] == '1'){
             output[k] = '0';
         }

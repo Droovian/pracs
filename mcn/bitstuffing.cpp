@@ -7,7 +7,7 @@ int main()
     string s, temp; int c = 0;
 
     getline(cin, s);
-    int n = s.length();
+    int n = s.length(); string flag = "01111110";
 
     for(int i=0; i<n; i++){
 
@@ -24,6 +24,8 @@ int main()
         }
     }
 
+     s.insert(0, flag); s.append(flag);
+     
     cout << "After bit stuffing it looks like " << s << endl;
     return 0;
 }
